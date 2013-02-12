@@ -61,6 +61,9 @@ return function(w)
 	--   active (mouse pressed on widget) or
 	--   normal (mouse not on widget and not pressed on widget).
 	mouse.updateWidget(id, pos, size, w.widgetHit)
+	if mouse.isActive(id) then
+		keyboard.setFocus(id)
+	end
 
 	-- keyboard.makeCyclable makes the item focus on tab or whatever binding is
 	-- in place (see core.keyboard.cycle). Cycle order is determied by the
